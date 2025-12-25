@@ -1,0 +1,451 @@
+/* 全局样式重置（解决浏览器默认样式差异） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "Arial", sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+    min-width: 320px; /* 最小宽度，避免小屏幕错乱 */
+}
+
+/* 通用容器样式（所有页面统一居中） */
+.container {
+    max-width: 1200px; /* 最大宽度，适配大屏幕 */
+    width: 100%; /* 占满可用宽度，适配小屏幕 */
+    margin: 30px auto; /* 水平居中，上下留间距 */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); /* 柔和阴影，增强层次 */
+}
+
+/* 通用按钮样式（统一风格） */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px); /* 轻微上浮，增强交互感 */
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* 错误提示通用样式 */
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ———— 登录页专属样式 ———— */
+.login-page {
+    min-height: 100vh; /* 占满整个屏幕高度 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px; /* 登录框最大宽度 */
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #0d6efd;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    color: #444;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* 登录页表单项 */
+.form-item {
+    margin-bottom: 25px;
+    display: flex; /* 横向对齐 */
+    align-items: center;
+    justify-content: center;
+}
+
+.form-item label {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.form-item input {
+    padding: 10px 12px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-item input:focus {
+    outline: none;
+    border-color: #0d6efd; /* 聚焦时边框变色 */
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.1);
+}
+
+/* 验证码图片 */
+.captcha-img {
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* 登录按钮 */
+.login-btn {
+    width: 345px; /* 和输入框+label总宽度匹配 */
+    padding: 12px;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* ———— 列表页专属样式 ———— */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    color: #444;
+    font-size: 24px;
+}
+
+/* 头部操作区（发布按钮/登录按钮） */
+.header-actions {
+    display: flex;
+    gap: 15px; /* 按钮间距 */
+}
+
+/* 登录用户信息 */
+.user-info {
+    font-size: 16px;
+    color: #555;
+}
+
+.user-info a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.user-info a:hover {
+    text-decoration: underline;
+}
+
+/* 讨论列表容器 */
+.message-list {
+    margin-top: 20px;
+}
+
+/* 单个讨论项 */
+.message-item {
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.message-item:hover {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.message-item h3 a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-size: 19px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.message-item h3 a:hover {
+    text-decoration: underline;
+}
+
+/* 讨论元信息（发布者、时间） */
+.message-meta {
+    color: #666;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+/* 讨论内容 */
+.message-content {
+    color: #555;
+    line-height: 1.8;
+    font-size: 15px;
+    white-space: pre-line; /* 保留换行符 */
+}
+
+/* 空列表提示 */
+.empty-tip {
+    color: #666;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* ———— 详情页专属样式 ———— */
+.back-btn {
+    color: #0d6efd;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+/* 主讨论内容区 */
+.main-message {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: #fafafa;
+}
+
+.main-message h2 {
+    color: #444;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* 回复列表容器 */
+.replies {
+    margin-top: 20px;
+}
+
+/* 单个回复项 */
+.reply-item {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s;
+}
+
+.reply-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 回复元信息 */
+.reply-meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* 回复内容 */
+.reply-content {
+    color: #555;
+    line-height: 1.6;
+    font-size: 15px;
+    white-space: pre-line; /* 保留换行符 */
+}
+
+/* 无回复提示 */
+.no-reply {
+    color: #666;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* 回复表单 */
+.reply-form {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #eee;
+}
+
+.reply-form h3 {
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.reply-form textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    resize: vertical;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+    transition: border-color 0.3s;
+}
+
+.reply-form textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.1);
+}
+
+/* ———— 发布页专属样式 ———— */
+.publish-form {
+    margin-top: 25px;
+}
+
+.publish-form .form-item {
+    justify-content: flex-start; /* 发布页表单项左对齐 */
+    margin-bottom: 20px;
+}
+
+.publish-form .form-item label {
+    width: 100px;
+    font-size: 16px;
+}
+
+.publish-form input[name="title"] {
+    width: calc(100% - 115px); /* 自适应宽度，减去label宽度和间距 */
+    padding: 12px;
+    font-size: 16px;
+}
+
+.publish-form textarea {
+    width: calc(100% - 115px); /* 自适应宽度 */
+    height: 200px;
+    padding: 12px;
+    resize: vertical;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+    transition: border-color 0.3s;
+}
+
+.publish-form textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.1);
+}
+
+/* ———— 响应式适配（小屏幕优化） ———— */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    /* 登录页小屏幕适配 */
+    .form-item {
+        flex-direction: column; /* 表单项垂直排列 */
+        align-items: flex-start;
+    }
+
+    .form-item label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+
+    .form-item input {
+        width: 100%;
+    }
+
+    .login-btn {
+        width: 100%;
+    }
+
+    /* 发布页小屏幕适配 */
+    .publish-form .form-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .publish-form input[name="title"],
+    .publish-form textarea {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    /* 详情页小屏幕适配 */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .main-message {
+        padding: 20px;
+    }
+
+    .reply-item {
+        padding: 15px;
+    }
+}
